@@ -1,1 +1,89 @@
 
+#question 1:
+​
+percent = int(input("Enter your percent: "))
+if percent > 90:
+     print(" you got grade : A")
+elif percent > 80 and percent <= 90:
+    print(" you got grade : B")
+elif percent >= 60 and percent <= 80:
+    print(" you got grade : C")
+else:
+     print(" you got grade : D")
+Enter your percent: 71
+ you got grade : C
+ 
+ 
+ 
+ 
+#question 2:
+​
+cost =int(input("Enter the price of your bike: "))
+if cost > 100000:
+    print(" your road tax is : 15% ")
+elif cost > 5000 and cost <= 100000:
+    print("your road tax is : 10% ")
+elif cost <= 50000:
+    print("your road tax is : 5% ")
+    
+    
+    
+    
+#question 3:
+​
+city = input("Enter your city name: ")
+if city == "delhi":
+    print("Red fort")
+elif city == "agra":
+    print("taj mahal")
+elif city == "jaipur":
+    print("jal mahal")
+else:
+    print("try next time")
+i don't understand the question
+
+
+
+
+
+#queston 4:
+​
+i don't understand the question
+
+
+
+
+#question 5:
+​
+If we know a specific number, such as 32, we can say 5 times, but for a given symbolic variable
+"NUMBER" which represents any number in the world, how many times is not known a priori (before hand).
+In this case, we could use a while loop to determine that answer:
+
+
+
+
+#question 6:
+​
+n =int(input("Enter your num: "))
+for i in range(n):
+    print("*" *(n-i))
+    
+    
+    
+    
+#question 7:
+​
+i = 10
+while i > 0:
+    print(i)
+    i = i - 1
+    
+    
+    
+
+#question 8:
+​
+i = 10
+while i > 0:
+    print(i)
+    i = i - 1
