@@ -15,6 +15,12 @@ while num<10:
 
 for i in range(10):
     print(i)
+    
+    
+    
+    
+    
+    
 
 # Q2.  Write a python program to print the sum and product of the first 10 natural numbers using for  and while loop.
 #
@@ -42,6 +48,12 @@ print("sum of the first 10 natural num: ",sum)
 print("prodect of the first 10 natural num: ",product)
 
 
+
+
+
+
+
+
 # Q3. Create a python program to compute the electricity bill for a household.
 # The per-unit charges in rupees are as follows: For the first 100 units,
 # the user will be charged Rs. 4.5 per unit, for the next 100 units,
@@ -64,6 +76,12 @@ elif units <= 300:
 else:
     bill = 100 * 4.5 +100 * 6 + 100 *1. +(units -300)* 20
 print("Total bill: ",bill)
+
+
+
+
+
+
 
 
 # Q4. Create a list of numbers from 1 to 100. Use for loop and while loop to calculate the cube of each number and if the cube of that number is divisible by 4 or 5 then append that number in a list and print that list.
