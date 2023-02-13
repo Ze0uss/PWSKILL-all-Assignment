@@ -1,0 +1,129 @@
+# Q1. Which keyword is used to create a function? Create a function to return a list of odd numbers in the  range of 1 to 25.
+
+# ans:
+# def is the keyword of creating function
+
+def numofodd():
+"""a function to return a list of odd numbers in the range of 1 to 25."""
+lst = []
+for i in range(1,25):
+    if i%2 != 0:
+    lst.append(i)
+return lst
+print(numofodd())
+
+# Q2. Why *args and **kwargs is used in some functions? Create a function each for *args and **kwargs to demonstrate their use.
+
+# ans:
+
+
+# Q3. What is an iterator in python? Name the method used to initialise the iterator object and the method used for iteration.
+# Use these methods to print the first five elements of the given list [2, 4, 6, 8, 10, 12, 14, 16, 18, 20].
+
+# ans: Iterators are methods that iterate collections like lists, tuples, etc. Using an iterator method, we can loop through an
+# object and return its elements. The for loop in Python is used to iterate over a sequence of elements, such as a list, tuple, or
+# string. When we use the for loop with an iterator, the loop will automatically iterate over the elements of the iterator until it is exhausted.
+
+l=[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+count=0
+for i in l:
+    if count<5:
+        print(i)
+        count +=1
+
+
+# Q4.  What is a generator function in python? Why yield keyword is used? Give an example of a generator function.
+
+# ans:    A generator-function is defined like a normal function, but whenever it needs to generate a value, it does so with
+# the yield keyword rather than return. If the body of a def contains yield, the function automatically becomes a generator function.
+
+
+def fibonacci():
+    """This function will generate fibonacci sequence"""
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+fib = fibonacci()
+for i in range(10):
+    print(next(fib))
+
+
+# Q5. Create a generator function for prime numbers less than 1000. Use the next() method to print the
+# first 20 prime numbers.
+
+# ans:
+
+def prime_numbers():
+    for num in range(2, 1000):
+        for i in range(2, num):
+            if (num % i) == 0:
+                break
+        else:
+            yield num
+
+# Use the generator function to get the first 20 prime numbers
+primes = prime_numbers()
+for i in range(20):
+    print(next(primes))
+
+
+# Q6. Write a python program to print the first 10 Fibonacci numbers using a while loop.
+
+# ans:
+
+
+n =int(input("Enter your num: "))
+def fibonacci(n):
+    """This function will print fibonacci sequence"""
+    a, b = 0, 1
+    count = 0
+    while count < n:
+        print(a)
+        a, b = b, a + b
+        count += 1
+
+fibonacci(n)
+
+
+
+
+# 7. Write a List Comprehension to iterate through the given string: ‘pwskills’.
+# Expected output: ['p', 'w', 's', 'k', 'i', 'l', 'l', 's']
+
+# ans:
+
+l = 'pwskill'
+l2 =[]
+[l2.append(i) for i in l]
+print(l2)
+
+
+# Q8. Write a python program to check whether a given number is Palindrome or not using a while loop.
+# ans:
+
+
+def is_palindrome(num):
+    original_num = num
+    reverse_num = 0
+    while num > 0:
+        last_digit = num % 10
+        reverse_num = (reverse_num * 10) + last_digit
+        num //= 10
+    return original_num == reverse_num
+
+num = int(input("Enter a number: "))
+if is_palindrome(num):
+    print(f"{num} is a palindrome.")
+else:
+    print(f"{num} is not a palindrome.")
+
+
+# Q9. Write a code to print odd numbers from 1 to 100 using list comprehension
+
+# ans:
+
+lst=[]
+[lst.append(i) for i in range(1,100) if i%2 !=0]
+print(lst)
