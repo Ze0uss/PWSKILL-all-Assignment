@@ -1,0 +1,147 @@
+Q1. Explain Class and Object with respect to Object-Oriented Programming. Give a suitable example.
+
+Ans: Class: In object-oriented programming, a class is a blueprint or a template for creating objects (an instance of the class).
+It defines a set of attributes and behaviors that an object of that class will have. A class can be considered as a blueprint for
+the object or objects that can be created using it.
+
+Object: An object is an instance of a class. It is a real-world entity with attributes and behaviors that are defined by the class.
+An object has a state and a behavior, and it is created from a class. An object is also known as an instance of a class.
+
+
+
+
+
+Q2. Name the four pillars of OOPs.
+
+Ans: The four pillars of object-oriented programming (OOP) are:
+
+Abstraction: Abstraction refers to the practice of exposing only the relevant information and hiding the complexity of the implementation.
+It allows the user to focus on what the object does rather than how it does it.
+
+Encapsulation: Encapsulation is the mechanism of wrapping the data (variables) and functions that operate on that data within a single unit or object.
+This protects the data from accidental corruption and provides a secure way to access the data.
+
+Inheritance: Inheritance is a mechanism where a new class can be derived from an existing class.
+The derived class inherits all the attributes and behaviors of the parent class and can also have its own attributes and behaviors.
+
+Polymorphism: Polymorphism is the ability of an object to take on multiple forms.
+This is achieved in OOP by defining methods with the same name in different classes that are related by inheritance.
+When a method is called on an object, the correct implementation of that method is executed based on the object's actual class.
+
+
+
+
+
+
+Q3. Explain why the init() function is used. Give a suitable example.
+
+Ans: The init() function is used in object-oriented programming to initialize the attributes of an object at the time of its creation.
+It is a special method that is automatically called when an object is created from a class. The init() method is also known as a constructor
+
+
+class student:
+    def __init__(self,name,id):
+        self.name = name
+        self.id = id
+
+    def getDetails(self):
+        return self.name, self.id
+
+student = student("saurabh", 4092)
+print(student.name)
+print(student.id)
+
+
+
+
+
+
+Q4. Why self is used in OOPs?
+Ans: In object-oriented programming (OOP), self is used to refer to the instance of the object being manipulated within a method.
+It is a convention in Python (and some other programming languages) to use self as the first argument in an instance method to refer to the instance of the object.
+
+
+
+
+
+Q5. What is inheritance? Give an example for each type of inheritance.
+Ans: Inheritance is a mechanism in object-oriented programming (OOP) that allows a new class to be derived from an existing class.
+The derived class inherits all the attributes and behaviors of the parent class and can also have its own attributes and behaviors. Inheritance enables code reuse and makes it easier to create and maintain large, complex systems.
+
+There are several types of inheritanch
+
+1. singal inheritance
+2.multiple inheritance
+3.multilevel inheritance
+
+1. singal inheritance
+
+class student:
+    college = "iit"
+    def showDetails (self):
+        print("I am a Data science student")
+
+class programmer(student):
+    language = "python"
+
+    def getDetails(self):
+        print(f"the language is {self.language}")
+
+s = student()
+pr = programmer()
+# s.showDetails()
+pr.showDetails()
+
+
+2.multiple inheritance
+
+class Developer:
+    language =  "Html , css ,js"
+    level = 1
+
+class programmer:
+    language = "python"
+    star = 4
+
+    def upgrade(self):
+        self.level = self.level +1
+
+class student(programmer,Developer):
+    name = "saurabh"
+
+stu = student()
+stu.upgrade()
+print(stu.level)
+
+
+
+3.multilevel inheritance
+
+class Itclass:
+    language =  "Html , css ,js"
+
+    def takebreak(self):
+        print("i need a break...")
+
+class Student(Itclass):
+    language = "python"
+
+    def getSalery(self):
+        print("I am waiting for my salery")
+
+
+class programmer(Student):
+    language = "c/c++"
+
+    def getsalery(self):
+        print("No salery")
+
+it = Itclass()
+st = Student()
+it.takebreak()
+pr = programmer()
+pr.getsalery()
+
+
+
+
