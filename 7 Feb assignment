@@ -1,0 +1,159 @@
+'''Q1. You are writing code for a company. The requirement of the company is that you create a python function that will 
+check whether the password entered by the user is correct or not. The function should take the password as input and return
+the string “Valid Password” if the entered password follows the below-given password guidelines else it should return “Invalid 
+Password”.
+
+Note: 
+1. The Password should contain at least two uppercase letters and at least two lowercase letters.
+2. The Password should contain at least a number and three special characters.
+3. The length of the password should be 10 characters long.'''
+
+
+
+from string import punctuation
+def check_Pass(password):
+    upper_case = 0
+    lower_case = 0
+    special_char = 0
+    number = 0
+    valid = False
+    if len(password)>= 10:
+        for i in password:
+            if i.isupper():
+                upper_case = upper_case + 1
+            if i.islower():
+                lower_case = lower_case +1
+            if i in punctuation:
+                special_char = special_char +1
+            if i.isnumeric():
+                number = number + 1
+        if upper_case >= 2 and lower_case >= 2 and special_char >=3 and number >=1:
+            valid = True
+    else:
+        valid = False
+    if valid :
+        return "valid password"
+    else:
+        return "Invalid password"
+check_Pass("!HELLOitsme@123.")
+
+
+
+
+'''Q2. Solve the below-given questions using at least one of the following:
+
+1. Lambda function
+2. Filter function
+3. Map function
+4. List Comprehension
+
+Check if the string starts with a particular letter.
+Check if the string is numeric.
+Sort a list of tuples having fruit names and their quantity. [("mango",99),("orange",80), ("grapes", 1000)]
+Find the squares of numbers from 1 to 10
+Find the cube root of numbers from 1 to 10
+Check if a given number is even
+Filter odd numbers from the given list.
+[1,2,3,4,5,6,7,8,9,10]
+Sort a list of integers into positive and negative integers lists.
+[1,2,3,4,5,6,-1,-2,-3,-4,-5,0]
+'''
+
+
+# Check if the string starts with a particular letter.
+
+def check_start(string, startleter):
+    return True if string[0] == startleter else False
+check_start("hello" ,"h")
+            
+# by using lambda function
+
+check_start = lambda string ,startletter : True if string[0] == startletter else False
+
+check_start("hello" ,"h")
+
+
+
+
+# Check if the string is numeric.
+
+def check_num(string):
+    return True if string.isdigit() else False
+
+# by using lambda function
+
+check_num = lambda string : True if string.isdigit() else False
+check_num("555")
+
+
+
+
+# Sort a list of tuples having fruit names and their quantity. 
+
+fruits = [("mango",99),("orange",80), ("grapes", 1000)]
+
+# Using Lambda function
+sorted_fruits = sorted(fruits, key=lambda x: x[1])
+print(sorted_fruits)
+
+# Using List Comprehension
+sorted_fruits_lc = [fruit for fruit in sorted(fruits, key=lambda x: x[1])]
+print(sorted_fruits_lc)
+
+
+
+# Find the squares of numbers from 1 to 10
+
+square = list(map(lambda x : x**2 , range(1,11)))
+print(square)
+
+# Find the squares of numbers from 1 to 10 by using list comphernsion
+
+square1 =[x**2 for x in range(1,11)]
+print(square1)
+
+
+
+
+# Find the cube root of numbers from 1 to 10
+
+cube = list(map(lambda x : x**(1/3) , range(1,11)))
+print(cube)
+
+# Find the cube root of numbers from 1 to 10 by using list comphernsion
+
+cube1 = [x**(1/3) for x in range(1,11)]
+print(cube1)
+
+
+
+
+# Check if a given number is even
+check_even_no = lambda x : True if x % 2 == 0 else False
+check_even_no(4)
+
+
+
+# Filter odd numbers from the given list.
+
+num = [1,2,3,4,5,6,7,8,9,10]
+check_odd_no =list(filter(lambda x : x%2 != 0 ,num))
+print(check_odd_no)
+
+
+
+
+
+# Sort a list of integers into positive and negative integers lists.
+
+num_lst = [1,2,3,4,5,6,-1,-2,-3,-4,-5,0]
+
+# using list comphernsion 
+positive_list = [x for x in num_lst if x>0]
+negative_list = [x for x in num_lst if x<0]
+
+p = positive_list
+n = negative_list
+
+print(p,n)
+
